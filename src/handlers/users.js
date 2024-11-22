@@ -4,22 +4,40 @@ import { comparePasswords, createJWT, hashPassword } from "../modules/auth.js";
 export const createUser = async (req,res) => {
     let user = {};
     if(!req.body.roleAccess){
-        user = await prisma.user.create({
+        try{
+            user = await prisma.user.create({
             data : {
                 name : req.body.username,
                 password : await hashPassword(req.body.password),
                 email : req.body.email
             }
         });
+        }
+        catch(err){
+            res.status(400).json({
+                "status" : "User already exists",
+                "status_code" : 400
+            });
+            return;
+        }
     }else{
-        user = await prisma.user.create({
-            data : {
-                name : req.body.username,
-                password : await hashPassword(req.body.password),
-                email : req.body.email,
-                role : req.body.roleAccess
-            }
-        });
+        try{
+            user = await prisma.user.create({
+                data : {
+                    name : req.body.username,
+                    password : await hashPassword(req.body.password),
+                    email : req.body.email,
+                    role : req.body.roleAccess
+                }
+            });
+        }
+        catch(err){
+            res.status(400).json({
+                "status" : "User already exists",
+                "status_code" : 400
+            });
+            return;
+        }
     }
 
     res.status(200).json({
