@@ -64,15 +64,7 @@ The Car Rental System API allows users to manage car rentals, including booking,
 ## API Endpoints
 
 ### Authentication
-
-- **POST /api/signup**: Register a new user.
-- **POST /api/login**: Log in a user and retrieve a JWT.
-
-### Cars
-- **POST /api/cars/create**: Add a new car.
-- **GET /api/car/get-rides?origin={origin}&destination={dest}&category={cat}&required_hours={rh}**: Get details of a cars for the given information of rides.
-- **POST /api/car/rent**: Rent a car.
-- **POST  /api/car/update-rent-history**: Update Rent History
+    The comolete documentation is available at https://documenter.getpostman.com/view/38347414/2sAYBUDXXd
 
 
 
