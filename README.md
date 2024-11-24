@@ -62,10 +62,7 @@ The Car Rental System API allows users to manage car rentals, including booking,
       ```
 
 ## API Endpoints
-
-### Authentication
-    The comolete documentation is available at https://documenter.getpostman.com/view/38347414/2sAYBUDXXd
-
+Complete documentation is available at https://documenter.getpostman.com/view/38347414/2sAYBUDXXd
 
 
 ## Contributing
